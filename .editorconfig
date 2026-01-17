@@ -1,14 +1,41 @@
-# This is the top-most EditorConfig file
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs.
+# https://editorconfig.org
+
 root = true
 
 # Global settings for all files
 [*]
+indent_style = space
+indent_size = 4
 end_of_line = lf
-insert_final_newline = true
-trim_trailing_whitespace = true
 charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
 
-# Specific settings for YAML files
+# Python specific overrides
+[*.py]
+# PEP 8 recommends 4 spaces for indentation
+indent_style = space
+indent_size = 4
+# Max line length is usually 79 or 88 (Black),
+# but editorconfig doesn't enforce wrapping.
+
+# Web/Frontend files (if applicable)
+[*.{js,jsx,ts,tsx,html,css,json}]
+indent_style = space
+indent_size = 2
+
+# Markdown files
+[*.md]
+trim_trailing_whitespace = false
+indent_size = 2
+
+# YAML files (Configuration)
 [*.{yml,yaml}]
 indent_style = space
 indent_size = 2
+
+# Makefile
+[Makefile]
+indent_style = tab
